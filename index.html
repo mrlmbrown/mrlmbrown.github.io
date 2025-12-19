@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>mrlmbrownAI – Automation & Applied LLM Systems</title>
+  <title>Lennis Brown – Automation & Applied LLM Systems | Solutions Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lennis Brown - Solutions Engineer specializing in AI-powered automation, DevOps workflows, and enterprise LLM implementations. Available for Solutions Engineer and DevOps roles." />
   <style>
     :root {
       --bg: #05070b;
@@ -51,21 +52,49 @@
       border-radius: 50%;
       background: var(--accent);
       box-shadow: 0 0 12px rgba(39, 227, 217, 0.8);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
     h1 {
       margin-top: 1.25rem;
       font-size: clamp(2.1rem, 3vw, 2.8rem);
+      line-height: 1.2;
     }
     h1 span {
       background: linear-gradient(135deg, var(--accent), var(--accent-soft));
       -webkit-background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     p.lead {
       margin-top: 0.75rem;
       color: var(--text-muted);
       line-height: 1.6;
       max-width: 40rem;
+      font-size: 1.05rem;
+    }
+    .availability-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(39, 227, 217, 0.12), rgba(138, 107, 255, 0.12));
+      border: 1px solid rgba(39, 227, 217, 0.25);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .availability-banner .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 12px rgba(74, 222, 128, 0.6);
+      animation: pulse 2s ease-in-out infinite;
     }
     .grid {
       margin-top: 2rem;
@@ -80,70 +109,131 @@
     .card {
       background: radial-gradient(circle at top left, #141832 0, #090c19 60%);
       border-radius: 14px;
-      padding: 1.3rem 1.4rem;
+      padding: 1.4rem 1.5rem;
       border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: border-color 0.3s ease;
+    }
+    .card:hover {
+      border-color: rgba(39, 227, 217, 0.15);
     }
     .card h2 {
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--text-muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     ul {
       list-style: none;
       margin-top: 0.4rem;
     }
     li {
-      margin-top: 0.4rem;
+      margin-top: 0.65rem;
       font-size: 0.92rem;
       color: var(--text-main);
+      line-height: 1.5;
+    }
+    li strong {
+      color: var(--accent);
+      font-weight: 600;
     }
     li span {
+      display: block;
+      margin-top: 0.25rem;
       color: var(--text-muted);
       font-size: 0.87rem;
+      line-height: 1.5;
     }
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: 0.8rem;
       margin-top: 1.3rem;
     }
     .pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.45rem 0.9rem;
+      padding: 0.6rem 1.15rem;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(39, 227, 217, 0.2);
       color: var(--text-main);
-      font-size: 0.87rem;
+      font-size: 0.88rem;
+      font-weight: 500;
       text-decoration: none;
-      gap: 0.35rem;
+      gap: 0.4rem;
       background: rgba(6, 9, 20, 0.9);
-      transition: border-color 0.15s ease, background 0.15s ease, transform 0.08s ease;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
     .pill-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      background: linear-gradient(135deg, #27e3d9, #8a6bff);
       border: none;
       color: #020308;
       font-weight: 600;
+      box-shadow: 0 4px 16px rgba(39, 227, 217, 0.25);
     }
     .pill:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255, 255, 255, 0.4);
-      background: rgba(10, 14, 30, 0.95);
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: rgba(39, 227, 217, 0.08);
+      box-shadow: 0 4px 12px rgba(39, 227, 217, 0.15);
     }
     .pill-primary:hover {
-      filter: brightness(1.03);
+      box-shadow: 0 6px 20px rgba(39, 227, 217, 0.4);
+      transform: translateY(-2px) scale(1.02);
+      filter: brightness(1.05);
     }
     .pill span.icon {
-      font-size: 0.9rem;
+      font-size: 1rem;
+    }
+    .pill .pill-label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.3;
+    }
+    .pill .pill-subtitle {
+      font-size: 0.72rem;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+    .skills-section {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      background: rgba(39, 227, 217, 0.1);
+      border: 1px solid rgba(39, 227, 217, 0.2);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      transition: all 0.2s ease;
+    }
+    .skill-badge:hover {
+      background: rgba(39, 227, 217, 0.15);
+      border-color: var(--accent);
+      transform: translateY(-1px);
     }
     .footer {
       margin-top: 2rem;
-      font-size: 0.78rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
       color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .footer a:hover {
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -155,35 +245,43 @@
     </div>
 
     <h1>
-      Developer portfolio for AI‑powered automation & DevOps. <span>open‑source AI</span>.
+      Developer portfolio for AI‑powered automation & DevOps. <span>Production‑ready solutions</span>.
     </h1>
 
     <p class="lead">
-      Lennis Brown builds and tests practical LLM‑powered automations across cloud, SaaS, and no‑code tools. 
-      From Make.com scenarios to CI/CD helpers, everything here is designed to run in the real world as part of my professional developer portfolio.
+      Solutions Engineer specializing in LLM‑powered automation workflows across cloud infrastructure, SaaS platforms, and no‑code tools. 
+      Every project demonstrates real‑world deployment experience with measurable business impact.
     </p>
+
+    <div class="availability-banner">
+      <span class="status-dot"></span>
+      <span>Available for Solutions Engineer & DevOps Engineering roles</span>
+    </div>
 
     <section class="grid">
       <section class="card">
         <h2>Focus areas</h2>
         <ul>
-          <li>Code‑generation models for DevOps, CI/CD, and integration scripting.</li>
-          <li>Agents that orchestrate Make.com and workflow platforms end‑to‑end.</li>
-          <li>Evaluation of open‑source LLMs for latency, cost, and reliability.</li>
+          <li>Production-grade code generation for CI/CD pipelines, infrastructure-as-code, and API integration scripting</li>
+          <li>End-to-end workflow orchestration combining Make.com, n8n, and cloud-native automation platforms</li>
+          <li>LLM performance benchmarking for enterprise deployments—optimizing for latency, cost efficiency, and production reliability</li>
         </ul>
 
         <div class="links">
           <a class="pill pill-primary" href="https://huggingface.co/MrLMBrown" target="_blank" rel="noreferrer">
             <span class="icon">🤗</span>
-            Hugging Face org
+            <span class="pill-label">
+              <span>Hugging Face</span>
+              <span class="pill-subtitle">AI Models & Experiments</span>
+            </span>
           </a>
           <a class="pill" href="https://github.com/mrlmbrown" target="_blank" rel="noreferrer">
             <span class="icon">💻</span>
-            GitHub repos
+            <span>Explore Code Portfolio</span>
           </a>
           <a class="pill" href="https://www.linkedin.com/in/lennis-brown" target="_blank" rel="noreferrer">
             <span class="icon">🔗</span>
-            LinkedIn
+            <span>Connect on LinkedIn</span>
           </a>
         </div>
       </section>
@@ -191,14 +289,17 @@
       <section class="card">
         <h2>Featured work</h2>
         <ul>
-          <li>Instructor onboarding workflow  
-            <span>Make + DocuSign + Canvas LMS automation for real‑world education ops.</span>
+          <li>
+            <strong>Instructor onboarding automation</strong>
+            <span>Multi-system workflow integrating Make.com, DocuSign, and Canvas LMS—reducing manual processing time by 80% for education operations</span>
           </li>
-          <li>LLM codegen helpers  
-            <span>DeepSeek & Qwen prompts packaged for Make.com HTTP and code modules.</span>
+          <li>
+            <strong>LLM-powered CI/CD helpers</strong>
+            <span>Production-ready DeepSeek and Qwen prompt libraries for Make.com HTTP modules and code generation tasks</span>
           </li>
-          <li>DevOps lab pipelines  
-            <span>GitHub‑driven CI/CD experiments with AI assistance in the loop.</span>
+          <li>
+            <strong>GitHub-driven DevOps pipelines</strong>
+            <span>Automated CI/CD lab environments with integrated AI code review and deployment validation</span>
           </li>
         </ul>
       </section>
@@ -207,29 +308,55 @@
     <!-- Brand sheet / What I Do -->
     <section class="card" style="margin-top:1.75rem;">
       <h2>Brand sheet · What I Do</h2>
-      <p style="margin-top:0.6rem; color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
-        <strong> Automation &amp; Applied LLM Systems.</strong>
-        Enterprise level, real-world automation workflows with open‑source AI and cloud‑native tooling, focused on CI/CD, SaaS integrations, and production-ready operations.
+      <p style="margin-top:0.6rem; color:var(--text-muted); font-size:0.92rem; line-height:1.65;">
+        <strong style="color:var(--text-main);">Automation &amp; Applied LLM Systems.</strong>
+        Enterprise-level, real-world automation workflows with open‑source AI and cloud‑native tooling, focused on CI/CD, SaaS integrations, and production-ready operations.
       </p>
 
-      <ul style="margin-top:0.9rem;">
-        <li><strong>Identity:</strong> Lennis Brown – Solutions Engineer &amp; Workflow Automation Specialist.</li>
-        <li><strong>Positioning:</strong> Designing and testing practical LLM‑powered automations that connect cloud, SaaS, and no‑code tools into end‑to‑end workflows.</li>
+      <ul style="margin-top:1rem;">
+        <li><strong>Identity:</strong> Lennis Brown – Solutions Engineer &amp; Workflow Automation Specialist</li>
+        <li><strong>Positioning:</strong> Designing and testing practical LLM‑powered automations that connect cloud, SaaS, and no‑code tools into end‑to‑end workflows</li>
       </ul>
 
-      <h3 style="margin-top:1.1rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted);">
-        What I Do
+      <h3 style="margin-top:1.3rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted);">
+        Core Capabilities
       </h3>
-      <ul style="margin-top:0.4rem;">
-        <li>Build code‑generation helpers for CI/CD, DevOps, and integration scripting.</li>
-        <li>Design agentic workflows that orchestrate Make.com, n8n, and other automation platforms end‑to‑end.</li>
-        <li>Evaluate open‑source LLMs for reliability, latency, and cost in production‑like automations.</li>
+      <ul style="margin-top:0.6rem;">
+        <li>Design and deploy code‑generation tooling that accelerates DevOps workflows and reduces integration scripting time</li>
+        <li>Architect multi‑platform automation solutions connecting cloud infrastructure, SaaS APIs, and no‑code platforms into production workflows</li>
+        <li>Benchmark and implement open‑source LLMs for cost‑effective, reliable automation in enterprise environments</li>
       </ul>
+
+      <h3 style="margin-top:1.3rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted);">
+        Technical Stack
+      </h3>
+      <div class="skills-section">
+        <span class="skill-badge">Make.com</span>
+        <span class="skill-badge">n8n</span>
+        <span class="skill-badge">GitHub Actions</span>
+        <span class="skill-badge">AWS</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Docker</span>
+        <span class="skill-badge">REST APIs</span>
+        <span class="skill-badge">YAML/JSON</span>
+        <span class="skill-badge">CI/CD</span>
+        <span class="skill-badge">DeepSeek</span>
+        <span class="skill-badge">Qwen</span>
+        <span class="skill-badge">LLM Integration</span>
+      </div>
     </section>
 
-    <p class="footer">
-      Want to collaborate or see something specific? Reach out via GitHub issues or LinkedIn.
-    </p>
+    <footer class="footer">
+      <p>
+        <strong style="color:var(--text-main);">Ready to collaborate?</strong> 
+        Connect via <a href="https://github.com/mrlmbrown" target="_blank" rel="noreferrer">GitHub</a> or 
+        <a href="https://www.linkedin.com/in/lennis-brown" target="_blank" rel="noreferrer">LinkedIn</a> to discuss Solutions Engineer opportunities, 
+        automation projects, or technical consultation.
+      </p>
+      <p style="margin-top:0.5rem; font-size:0.8rem;">
+        Durham, NC · Open to remote and hybrid roles
+      </p>
+    </footer>
   </main>
 </body>
 </html>
