@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Lennis Brown | Automation & DevOps Portfolio</title>
+  <meta name="description" content="Explore Lennis Brown's automation, DevOps, and AI integration projects. Live demos, GitHub repositories, and detailed case studies." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --bg: #05070b;
+      --card: #101320;
+      --accent: #27e3d9;
+      --accent-soft: #8a6bff;
+      --text-main: #f5f7ff;
+      --text-muted: #a7afc7;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151a33 0, #05070b 55%);
+      color: var(--text-main);
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Navigation */
+    nav {
+      background: rgba(16, 19, 32, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+    
+    nav a:hover, nav a:focus {
+      background: rgba(39, 227, 217, 0.1);
+      outline: 2px solid var(--accent);
+    }
+    
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Project Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .project-card {
+      background: linear-gradient(145deg, #0b0f1c, #070915);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      border-color: rgba(39, 227, 217, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(39, 227, 217, 0.15);
+    }
+    
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .project-icon {
+      font-size: 2.5rem;
+      opacity: 0.9;
+    }
+    
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .status-live {
+      background: rgba(74, 222, 128, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(74, 222, 128, 0.3);
+    }
+    
+    .status-development {
+      background: rgba(250, 204, 21, 0.15);
+      color: #facc15;
+      border: 1px solid rgba(250, 204, 21, 0.3);
+    }
+    
+    .project-card h3 {
+      color: var(--accent);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-card p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .tech-tag {
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(39, 227, 217, 0.1);
+      border: 1px solid rgba(39, 227, 217, 0.2);
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #27e3d9, #8a6bff);
+      color: #020308;
+      border: none;
+    }
+    
+    .btn-secondary {
+      background: rgba(39, 227, 217, 0.1);
+      color: var(--text-main);
+      border: 1px solid rgba(39, 227, 217, 0.3);
+    }
+    
+    .btn:hover, .btn:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(39, 227, 217, 0.3);
+    }
+    
+    .metrics {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .metric {
+      text-align: center;
+    }
+    
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo">Lennis Brown</a>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="https://github.com/mrlmbrown" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/lennis-brown" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <header style="margin-bottom: 3rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+        Project Portfolio
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px;">
+        Production-ready automation systems, DevOps pipelines, and AI-powered workflows with measurable business impact.
+      </p>
+      
+      <!-- GitHub Actions Status Badge -->
+      <div style="margin-top: 1.5rem;">
+        <img src="https://github.com/mrlmbrown/mrlmbrown.github.io/actions/workflows/deploy.yml/badge.svg" 
+             alt="Deploy Portfolio - GitHub Actions workflow status" />
+        <img src="https://img.shields.io/github/last-commit/mrlmbrown/mrlmbrown.github.io?style=flat-square&color=27e3d9" 
+             alt="Last commit timestamp" />
+      </div>
+    </header>
+    
+    <!-- Projects Grid -->
+    <main>
+      <div class="projects-grid">
+        
+        <!-- Project 1: Instructor Onboarding Automation -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🏫</span>
+            <span class="status-badge status-live">Live</span>
+          </div>
+          <h3>Instructor Onboarding Automation</h3>
+          <p>
+            Multi-system workflow integrating Make.com, DocuSign, and Canvas LMS. Automated document routing, electronic signatures, and LMS provisioning reduced manual processing time by 80%.
+          </p>
+          <div class="tech-stack" role="list" aria-label="Technologies used">
+            <span class="tech-tag" role="listitem">Make.com</span>
+            <span class="tech-tag" role="listitem">DocuSign API</span>
+            <span class="tech-tag" role="listitem">Canvas LMS</span>
+            <span class="tech-tag" role="listitem">Webhooks</span>
+            <span class="tech-tag" role="listitem">JSON</span>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-value">80%</div>
+              <div class="metric-label">Time Saved</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">500+</div>
+              <div class="metric-label">Users</div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mrlmbrown/devops-automation-portfolio" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View project on GitHub">
+              👁️ View Project
+            </a>
+            <a href="https://github.com/mrlmbrown/devops-automation-portfolio/blob/main/docs/instructor-onboarding-case-study.md" 
+               class="btn btn-secondary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Read case study">
+              📊 Case Study
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 2: LLM-Powered CI/CD Helpers -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🤖</span>
+            <span class="status-badge status-live">Live</span>
+          </div>
+          <h3>LLM-Powered CI/CD Helpers</h3>
+          <p>
+            Production-ready DeepSeek and Qwen prompt libraries for Make.com HTTP modules. Generates Terraform code, API integrations, and deployment scripts with 95% accuracy.
+          </p>
+          <div class="tech-stack" role="list" aria-label="Technologies used">
+            <span class="tech-tag" role="listitem">DeepSeek</span>
+            <span class="tech-tag" role="listitem">Qwen 2.5</span>
+            <span class="tech-tag" role="listitem">Make.com</span>
+            <span class="tech-tag" role="listitem">Python</span>
+            <span class="tech-tag" role="listitem">Terraform</span>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-value">95%</div>
+              <div class="metric-label">Accuracy</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">10x</div>
+              <div class="metric-label">Faster</div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mrlmbrown/llm-cicd-helpers" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View project on GitHub">
+              👁️ View Project
+            </a>
+            <a href="https://huggingface.co/MrLMBrown" 
+               class="btn btn-secondary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View models on HuggingFace">
+              🤗 Models
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 3: GitHub Actions DevOps Lab -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🚀</span>
+            <span class="status-badge status-live">Live</span>
+          </div>
+          <h3>GitHub Actions DevOps Lab</h3>
+          <p>
+            Automated CI/CD lab environment with integrated AI code review and deployment validation. Includes accessibility testing, HTML validation, and automated GitHub Pages deployment.
+          </p>
+          <div class="tech-stack" role="list" aria-label="Technologies used">
+            <span class="tech-tag" role="listitem">GitHub Actions</span>
+            <span class="tech-tag" role="listitem">Lighthouse CI</span>
+            <span class="tech-tag" role="listitem">Docker</span>
+            <span class="tech-tag" role="listitem">YAML</span>
+            <span class="tech-tag" role="listitem">Node.js</span>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">A11y Score</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">3min</div>
+              <div class="metric-label">Build Time</div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mrlmbrown/mrlmbrown.github.io/blob/main/.github/workflows/deploy.yml" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View workflow on GitHub">
+              👁️ View Workflow
+            </a>
+            <a href="https://github.com/mrlmbrown/mrlmbrown.github.io/actions" 
+               class="btn btn-secondary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View workflow runs">
+              📈 Runs
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 4: n8n Workflow Templates -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🧠</span>
+            <span class="status-badge status-development">In Progress</span>
+          </div>
+          <h3>n8n Workflow Templates</h3>
+          <p>
+            Collection of production-ready n8n workflow templates for SaaS integrations, data transformation, and webhook automation. Includes HubSpot, Salesforce, and Slack connectors.
+          </p>
+          <div class="tech-stack" role="list" aria-label="Technologies used">
+            <span class="tech-tag" role="listitem">n8n</span>
+            <span class="tech-tag" role="listitem">HubSpot</span>
+            <span class="tech-tag" role="listitem">Salesforce</span>
+            <span class="tech-tag" role="listitem">REST APIs</span>
+            <span class="tech-tag" role="listitem">OAuth2</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mrlmbrown/n8n-workflow-templates" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View project on GitHub">
+              👁️ View Project
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 5: API Testing Framework -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🧪</span>
+            <span class="status-badge status-live">Live</span>
+          </div>
+          <h3>API Testing Framework</h3>
+          <p>
+            Comprehensive Postman collection framework for API testing and automation validation. Includes pre-request scripts, test assertions, and Newman CLI integration for CI/CD.
+          </p>
+          <div class="tech-stack" role="list" aria-label="Technologies used">
+            <span class="tech-tag" role="listitem">Postman</span>
+            <span class="tech-tag" role="listitem">Newman</span>
+            <span class="tech-tag" role="listitem">JavaScript</span>
+            <span class="tech-tag" role="listitem">REST APIs</span>
+            <span class="tech-tag" role="listitem">JSON Schema</span>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-value">200+</div>
+              <div class="metric-label">Tests</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">15</div>
+              <div class="metric-label">APIs</div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mrlmbrown/api-testing-framework" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View project on GitHub">
+              👁️ View Project
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 6: AWS Infrastructure as Code -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">☁️</span>
+            <span class="status-badge status-development">In Progress</span>
+          </div>
+          <h3>AWS Infrastructure as Code</h3>
+          <p>
+            Terraform modules for deploying scalable AWS infrastructure. Includes VPC setup, EC2 instances, S3 buckets, IAM roles, and CloudWatch monitoring with security best practices.
+          </p>
+          <div class="tech-stack" role="list" aria-label="Technologies used">
+            <span class="tech-tag" role="listitem">Terraform</span>
+            <span class="tech-tag" role="listitem">AWS</span>
+            <span class="tech-tag" role="listitem">HCL</span>
+            <span class="tech-tag" role="listitem">CloudWatch</span>
+            <span class="tech-tag" role="listitem">IAM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mrlmbrown/aws-terraform-modules" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="View project on GitHub">
+              👁️ View Project
+            </a>
+          </div>
+        </article>
+        
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: var(--text-muted);">
+      <p>
+        <strong style="color: var(--text-main);">Interested in collaboration?</strong><br />
+        Connect via <a href="https://github.com/mrlmbrown" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">GitHub</a> or 
+        <a href="https://www.linkedin.com/in/lennis-brown" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">LinkedIn</a>
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+        Durham, NC · Open to remote and hybrid roles
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
